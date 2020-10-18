@@ -1,0 +1,825 @@
+
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+; 07 nov. 2018 - Electro7
+; Polybar 3.2.1
+;
+;==========================================================
+
+;=====================================================
+;   colors
+;=====================================================
+[colors]
+foreground = ${xrdb:foreground}
+;background = ${xrdb:background}
+background = #00000000
+
+;background = ${xrdb:coloraltbackground}
+highlight = ${xrdb:color7}
+highback = ${xrdb:color3}
+warn = ${xrdb:color9}
+alert = ${xrdb:color3}
+;section = ${xrdb:color8}
+;section = #5B9DB4
+section = ${xrdb:color6}
+section_off = ${xrdb:color0}
+black = #000000
+
+;=====================================================
+;   variables
+;=====================================================
+[variables]
+bar-height = 15
+bar-border-size = 1
+
+label-padding = 1
+label-maxlen = 50
+
+eth=eth0
+wlan=wlp2s0
+
+;=====================================================
+;   fonts
+;=====================================================
+[fonts]
+font-0 = Inconsolata Nerd Font Bold:style:Bold:size=8:antialias=true;2"
+font-1 = Inconsolata for Powerline:size=13:antialias=true;2"
+font-2 = Inconsolata Nerd Font:style=Medium:size=10:antialias=true;3"
+font-3 = OpenLogos:style=Regular:pixelsize:12;1"
+font-4 = Monofurbold Nerd Font Mono:pixelsize=14;2"
+font-5 = UbuntuMono Nerd Font:size=14;3"
+font-6 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:pixelsize=10:antialias=true;3"
+font-7 = Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid:pixelsize=11.5:antialias=true;1"
+font-8 = Font Awesome 5 Brands, Font Awesome 5 Brands Regular:style=Regular:pixelsize=12:antialias=true;1"
+font-9 = font\-logos:style=logos:pixelsize:10;3"
+font-10 = OpenLogos:style=Regular:pixelsize:12;1"
+font-11 = fontawesome-regular:size=12:antialias=true;3"
+font-12 = ttf-font-logos:style=logos:size:10:antialias=true;2"
+font-13 = MaterialIcons:size=12:antialias=true;1"
+font-14 = Termsynu:size=14:antialias=true;3"
+font-15 = Font Awesome 5 Free:style=Regular:pixelsize=8:antialias=true;1"
+font-16 = Font Awesome 5 Free:style=Solid:pixelsize=8:antialias=true;1"
+font-17 = Font Awesome 5 Brands:pixelsize=8:antialias=true;1"
+font-18 = Hack Nerd Font:pixelsize=12:antialias=true;3"
+font-19 = ProFontIIx Nerd Font Mono:pixelsize=12:antialias=true;3"
+font-20 = NotoSans-Regular:size=12:antialias=true;3"
+font-21 = unifont:size=12:antialias=true;3"
+font-22 = FontAwesome:size=12:antialias=true;2"
+font-23 = NotoSans-Regular:size=12:antialias=true;1"
+font-24 = fontello Regular:style=Regular:pixelsize=12:antialias=true;2"
+font-25 = Inconsolata Nerd Font:style=Medium:size=12:antialias=true;3"
+font-26 = Inconsolata Nerd Font Bold:size=9:antialias=true;3
+font-27 = Powerline Extra Symbols:style=Medium:size=16;3
+
+;=====================================================
+;   settings
+;=====================================================
+[settings]
+screenchange-reload = true
+
+;=====================================================
+;   global/wm
+;=====================================================
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+;border-left-size = 5
+;border-right-size = 5
+;=====================================================
+;   bar/top
+;=====================================================
+[bar/top]
+monitor = LVDS-1
+height = 18
+bottom = false
+fixed-center = false
+override-redirrect = true
+border-top-size = 
+border-bottom-size = ${variables.bar-border-size}
+;border-color = ${colors.black}
+border-left-size = 
+border-right-size = 
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius-bottom= 25
+
+
+font-0 = Inconsolata Nerd Font Bold:style:Bold:size=8:antialias=true;2"
+font-1 = Inconsolata for Powerline:size=13:antialias=true;2"
+font-2 = Inconsolata Nerd Font:style=Medium:size=10:antialias=true;3"
+font-3 = OpenLogos:style=Regular:pixelsize:12;1"
+font-4 = Monofurbold Nerd Font Mono:pixelsize=14;2"
+font-5 = UbuntuMono Nerd Font:size=14;3"
+font-6 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:pixelsize=10:antialias=true;3"
+font-7 = Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid:pixelsize=11.5:antialias=true;1"
+font-8 = Font Awesome 5 Brands, Font Awesome 5 Brands Regular:style=Regular:pixelsize=12:antialias=true;1"
+font-9 = font\-logos:style=logos:pixelsize:10;3"
+font-10 = OpenLogos:style=Regular:pixelsize:12;1"
+font-11 = fontawesome-regular:size=12:antialias=true;3"
+font-12 = ttf-font-logos:style=logos:size:10:antialias=true;2"
+font-13 = MaterialIcons:size=12:antialias=true;1"
+font-14 = Powerline Extra Symbols:style=Regular:size=15;3
+font-15 = Font Awesome 5 Free:style=Regular:pixelsize=8:antialias=true;1"
+font-16 = Font Awesome 5 Free:style=Solid:pixelsize=8:antialias=true;1"
+font-17 = Font Awesome 5 Brands:pixelsize=8:antialias=true;1"
+font-18 = Hack Nerd Font:pixelsize=12:antialias=true;3"
+font-19 = ProFontIIx Nerd Font Mono:pixelsize=12:antialias=true;3"
+font-20 = NotoSans-Regular:size=12:antialias=true;3"
+font-21 = unifont:size=12:antialias=true;3"
+font-22 = FontAwesome:size=12:antialias=true;2"
+font-23 = NotoSans-Regular:size=12:antialias=true;1"
+font-24 = fontello Regular:style=Regular:pixelsize=12:antialias=true;2"
+font-25 = Inconsolata Nerd Font:style=Medium:size=12:antialias=true;3"
+font-26 = Inconsolata Nerd Font Bold:size=9:antialias=true;3
+font-27 = Powerline Extra Symbols:style=Medium:size=21;3
+font-28 = "Symbola:size=14:antialias=true;3"
+
+modules-left = ws_icon i3 lhb lbs ti_icon lsb
+modules-center = mpd
+modules-right = cpu temperature memory wifi volume backlight battery date time
+
+;tray-position = right
+;tray-detached = false
+;tray-maxsize = 15
+;tray-transparent = false
+;tray-background = ${colors.highlight}
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-padding = 1
+;tray-scale = 1.0
+
+
+[bar/top2]
+monitor = HDMI-1
+monitor-fallback = VGA-1
+height = 17.5
+bottom = false
+fixed-center = true
+border-top-size = 0
+border-bottom-size = ${variables.bar-border-size}
+;border-color = ${colors.black}
+border-left-size = 0
+border-right-size = 0
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius-bottom = 20
+
+
+font-0 = Inconsolata Nerd Font Bold:style:Bold:size=8:antialias=true;2"
+font-1 = Inconsolata for Powerline:size=13:antialias=true;2"
+font-2 = Inconsolata Nerd Font:style=Medium:size=10:antialias=true;3"
+font-3 = OpenLogos:style=Regular:pixelsize:12;1"
+font-4 = Monofurbold Nerd Font Mono:pixelsize=14;2"
+font-5 = UbuntuMono Nerd Font:size=14;3"
+font-6 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:pixelsize=10:antialias=true;3"
+font-7 = Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid:pixelsize=11.5:antialias=true;1"
+font-8 = Font Awesome 5 Brands, Font Awesome 5 Brands Regular:style=Regular:pixelsize=12:antialias=true;1"
+font-9 = font\-logos:style=logos:pixelsize:10;3"
+font-10 = OpenLogos:style=Regular:pixelsize:12;1"
+font-11 = fontawesome-regular:size=12:antialias=true;3"
+font-12 = ttf-font-logos:style=logos:size:10:antialias=true;2"
+font-13 = MaterialIcons:size=12:antialias=true;1"
+font-14 = Powerline Extra Symbols:style=Regular:size=14;3
+font-15 = Font Awesome 5 Free:style=Regular:pixelsize=8:antialias=true;1"
+font-16 = Font Awesome 5 Free:style=Solid:pixelsize=8:antialias=true;1"
+font-17 = Font Awesome 5 Brands:pixelsize=8:antialias=true;1"
+font-18 = Hack Nerd Font:pixelsize=12:antialias=true;3"
+font-19 = ProFontIIx Nerd Font Mono:pixelsize=12:antialias=true;3"
+font-20 = NotoSans-Regular:size=12:antialias=true;3"
+font-21 = unifont:size=12:antialias=true;3"
+font-22 = FontAwesome:size=12:antialias=true;2"
+font-23 = NotoSans-Regular:size=12:antialias=true;1"
+font-24 = fontello Regular:style=Regular:pixelsize=12:antialias=true;2"
+font-25 = Inconsolata Nerd Font:style=Medium:size=12:antialias=true;3"
+font-26 = Inconsolata Nerd Font Bold:size=9:antialias=true;3
+font-27 = Powerline Extra Symbols:style=Medium:size=16;3
+
+
+modules-left = ws_icon i3 lhb lbs ti_icon lsb
+modules-center = kernel
+modules-right = bmc
+
+;tray-position = right
+;tray-detached = false
+;tray-maxsize = 15
+;tray-transparent = false
+;tray-background = ${colors.highlight}
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-padding = 1
+;tray-scale = 1.0
+
+
+
+[bar/bottom2]
+monitor = HDMI1
+monitor-fallback = VGA1
+height = 18
+bottom = true
+fixed-center = true
+border-top-size = 0
+border-bottom-size = ${variables.bar-border-size}
+;border-color = ${colors.black}
+border-left-size = 0
+border-right-size = 0
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius-top = 20
+width = 12 %
+
+font-0 = Inconsolata Nerd Font Bold:style:Bold:size=8:antialias=true;2"
+font-1 = Inconsolata for Powerline:size=13:antialias=true;2"
+font-2 = Inconsolata Nerd Font:style=Medium:size=10:antialias=true;3"
+font-3 = OpenLogos:style=Regular:pixelsize:12;1"
+font-4 = Monofurbold Nerd Font Mono:pixelsize=14;2"
+font-5 = UbuntuMono Nerd Font:size=14;3"
+font-6 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:pixelsize=10:antialias=true;3"
+font-7 = Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid:pixelsize=11.5:antialias=true;1"
+font-8 = Font Awesome 5 Brands, Font Awesome 5 Brands Regular:style=Regular:pixelsize=12:antialias=true;1"
+font-9 = font\-logos:style=logos:pixelsize:10;3"
+font-10 = OpenLogos:style=Regular:pixelsize:12;1"
+font-11 = fontawesome-regular:size=12:antialias=true;3"
+font-12 = ttf-font-logos:style=logos:size:10:antialias=true;2"
+font-13 = MaterialIcons:size=12:antialias=true;1"
+font-14 = Powerline Extra Symbols:style=Regular:size=14;3
+font-15 = Font Awesome 5 Free:style=Regular:pixelsize=8:antialias=true;1"
+font-16 = Font Awesome 5 Free:style=Solid:pixelsize=8:antialias=true;1"
+font-17 = Font Awesome 5 Brands:pixelsize=8:antialias=true;1"
+font-18 = Hack Nerd Font:pixelsize=12:antialias=true;3"
+font-19 = ProFontIIx Nerd Font Mono:pixelsize=12:antialias=true;3"
+font-20 = NotoSans-Regular:size=12:antialias=true;3"
+font-21 = unifont:size=12:antialias=true;3"
+font-22 = FontAwesome:size=12:antialias=true;2"
+font-23 = NotoSans-Regular:size=12:antialias=true;1"
+font-24 = fontello Regular:style=Regular:pixelsize=12:antialias=true;2"
+font-25 = Inconsolata Nerd Font:style=Medium:size=12:antialias=true;3"
+font-26 = Inconsolata Nerd Font Bold:size=9:antialias=true;3
+font-27 = Powerline Extra Symbols:style=Medium:size=16;3
+
+
+modules-left = ws_icon i3 
+;tray-position = right
+;tray-detached = false
+;tray-maxsize = 15
+;tray-transparent = false
+;tray-background = ${colors.highlight}
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-padding = 1
+;tray-scale = 1.0
+
+
+;=====================================================
+; bottom
+;====================================================
+
+[bar/bottom]
+monitor = HDMI1
+monitor-fallback = VGA1
+height = 17.5
+bottom = true
+fixed-center = true
+border-top-size = 0
+border-bottom-size = ${variables.bar-border-size}
+;border-color = ${colors.black}
+border-left-size = 0
+border-right-size = 0
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius-top = 20
+override-redirrect = false
+
+
+font-0 = Inconsolata Nerd Font Bold:style:Bold:size=8:antialias=true;2"
+font-1 = Inconsolata for Powerline:size=13:antialias=true;2"
+font-2 = Inconsolata Nerd Font:style=Medium:size=10:antialias=true;3"
+font-3 = OpenLogos:style=Regular:pixelsize:12;1"
+font-4 = Monofurbold Nerd Font Mono:pixelsize=14;2"
+font-5 = UbuntuMono Nerd Font:size=14;3"
+font-6 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Regular:pixelsize=10:antialias=true;3"
+font-7 = Font Awesome 5 Free,Font Awesome 5 Free Solid:style=Solid:pixelsize=11.5:antialias=true;1"
+font-8 = Font Awesome 5 Brands, Font Awesome 5 Brands Regular:style=Regular:pixelsize=12:antialias=true;1"
+font-9 = font\-logos:style=logos:pixelsize:10;3"
+font-10 = OpenLogos:style=Regular:pixelsize:12;1"
+font-11 = fontawesome-regular:size=12:antialias=true;3"
+font-12 = ttf-font-logos:style=logos:size:10:antialias=true;2"
+font-13 = MaterialIcons:size=12:antialias=true;1"
+font-14 = Powerline Extra Symbols:style=Regular:size=14;3
+font-15 = Font Awesome 5 Free:style=Regular:pixelsize=8:antialias=true;1"
+font-16 = Font Awesome 5 Free:style=Solid:pixelsize=8:antialias=true;1"
+font-17 = Font Awesome 5 Brands:pixelsize=8:antialias=true;1"
+font-18 = Hack Nerd Font:pixelsize=12:antialias=true;3"
+font-19 = ProFontIIx Nerd Font Mono:pixelsize=12:antialias=true;3"
+font-20 = NotoSans-Regular:size=12:antialias=true;3"
+font-21 = unifont:size=12:antialias=true;3"
+font-22 = FontAwesome:size=12:antialias=true;2"
+font-23 = NotoSans-Regular:size=12:antialias=true;1"
+font-24 = fontello Regular:style=Regular:pixelsize=12:antialias=true;2"
+font-25 = Inconsolata Nerd Font:style=Medium:size=12:antialias=true;3"
+font-26 = Inconsolata Nerd Font Bold:size=9:antialias=true;3
+font-27 = Powerline Extra Symbols:style=Medium:size=16;3
+
+
+modules-center = mpd
+;=====================================================
+;   section/base
+;=====================================================
+[section/base]
+format-prefix = %{T2}%{T-}
+format-prefix-foreground = ${colors.section}
+format-prefix-background = ${colors.highback}
+format-warn-prefix = %{T2}%{T-}
+format-warn-prefix-foreground = ${colors.warn}
+format-warn-prefix-background = ${colors.highback}
+format-connected-prefix = %{T2}%{T-}
+format-connected-prefix-foreground = ${colors.section}
+format-connected-prefix-background = ${colors.highback}
+format-disconnected-prefix = %{T2}%{T-}
+format-disconnected-prefix-foreground = ${colors.section}
+format-disconnected-prefix-background = ${colors.highback}
+format-volume-prefix = %{T2}%{T-}
+format-volume-prefix-foreground = ${colors.section}
+format-volume-prefix-background = ${colors.highback}
+format-muted-prefix = %{T2}%{T-}
+format-muted-prefix-foreground = ${colors.alert}
+format-muted-prefix-background = ${colors.background}
+format-charging-prefix = %{T2}%{T-}
+format-charging-prefix-foreground = ${colors.section}
+format-charging-prefix-background = ${colors.highback}
+format-discharging-prefix = %{T2}%{T-}
+format-discharging-prefix-foreground = ${colors.section}
+format-discharging-prefix-background = ${colors.highback}
+format-full-prefix = %{T2}%{T-}
+format-full-prefix-foreground = ${colors.section}
+format-full-prefix-background = ${colors.highback}
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.section}
+format-warn-foreground = ${colors.foreground}
+format-warn-background = ${colors.warn}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.section}
+format-disconnected-foreground = ${colors.foreground}
+format-disconnected-background = ${colors.section_off}
+format-volume-foreground = ${colors.foreground}
+format-volume-background = ${colors.section}
+format-muted-foreground = ${colors.black}
+format-muted-background = ${colors.alert}
+format-charging-foreground = ${colors.foreground}
+format-charging-background = ${colors.section}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-background = ${colors.section}
+format-full-foreground = ${colors.foreground}
+format-full-background = ${colors.section}
+
+format-suffix = %{T2}%{T-}
+format-suffix-foreground = ${colors.highback}
+format-suffix-background = ${colors.section}
+format-warn-suffix = %{T2}%{T-}
+format-warn-suffix-foreground = ${colors.highback}
+format-warn-suffix-background = ${colors.warn}
+format-connected-suffix = %{T2}%{T-}
+format-connected-suffix-foreground = ${colors.highback}
+format-connected-suffix-background = ${colors.section}
+format-disconnected-suffix = %{T2}%{T-}
+format-disconnected-suffix-foreground = ${colors.background}
+format-disconnected-suffix-background = ${colors.section_off}
+format-volume-suffix = %{T2}%{T-}
+format-volume-suffix-foreground = ${colors.highback}
+format-volume-suffix-background = ${colors.section}
+format-muted-suffix = %{T2}%{T-}
+format-muted-suffix-foreground = ${colors.background}
+format-muted-suffix-background = ${colors.alert}
+format-charging-suffix = %{T2}%{T-}
+format-charging-suffix-foreground = ${colors.highback}
+format-charging-suffix-background = ${colors.section}
+format-discharging-suffix = %{T2}%{T-}
+format-discharging-suffix-foreground = ${colors.highback}
+format-discharging-suffix-background = ${colors.section}
+format-full-suffix = %{T2}%{T-}
+format-full-suffix-foreground = ${colors.highback}
+format-full-suffix-background = ${colors.section}
+
+label-padding = ${variables.label-padding}
+label-warn-padding = ${variables.label-padding}
+label-connected-padding = ${variables.label-padding}
+label-disconnected-padding = ${variables.label-padding}
+label-volume-padding = ${variables.label-padding}
+label-muted-padding = ${variables.label-padding}
+label-charging-padding = ${variables.label-padding}
+label-discharging-padding = ${variables.label-padding}
+label-full-padding = ${variables.label-padding}
+
+;=====================================================
+;   module/lhb
+;=====================================================
+[module/lhb]
+type = custom/text
+
+content =%{T15}%{T-}
+content-foreground = ${colors.highlight}
+content-background = ${colors.background}
+
+;=====================================================
+;   module/lbs
+;=====================================================
+[module/lbs]
+type = custom/text
+
+content = %{T28}   %{T-}
+content-foreground = ${colors.section}
+content-background = ${colors.background}
+
+;=====================================================
+;   module/lsb
+;=====================================================
+[module/lsb]
+type = custom/text
+
+content = %{T28} %{T-}
+content-foreground = ${colors.section}
+content-background = ${colors.background}
+
+;=====================================================
+;   module/lbh
+;=====================================================
+[module/lbh]
+type = custom/text
+
+content = %{T2}%{T-}
+content-foreground = ${colors.background}
+content-background = ${colors.highlight}
+
+;=====================================================
+;   module/ws_icon
+;=====================================================
+[module/ws_icon]
+type = custom/text
+
+content = %{T26}  練  %{T-}
+content-foreground = ${colors.highback}
+content-background = ${colors.highlight}
+
+;=====================================================
+;   module/ti_icon
+;=====================================================
+[module/ti_icon]
+type = custom/script
+
+content = %{T3} 类 %{T-}
+content-foreground = ${colors.highlight}
+format-background = ${colors.section}
+exec = ~/.config/polybar/scripts/check-all-updates.sh
+interval = 600
+label = %{T19}%{T-} %{T1}%output% %{T-}
+
+;=====================================================
+;   module/i3
+;=====================================================
+[module/i3]
+type = internal/i3
+index-sort = true
+wrapping-scroll = true
+strip-wsnumbers = true
+pin-workspaces = false
+fuzzy-match = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 0;
+
+format-background = ${colors.highlight}
+format-foreground = ${colors.background}
+
+label-focused-foreground = ${colors.highback}
+label-focused-background = ${colors.highlight}
+label-unfocused-foreground = ${colors.section}
+label-unfocused-background = ${colors.highlight}
+label-visible-foreground = ${colors.section}
+label-visible-background = ${colors.highlight}
+label-urgent-foreground = ${colors.warn}
+label-urgent-background = ${colors.highlight}
+;format-label-focused-font = 26
+;label-focused-font = 26
+;label-visible-font = 26
+;label-urgent-font = 26
+label-focused =%{T26}%name% %{T-}
+label-unfocused =%{T26}%name% %{T-}
+label-visible =%{T26}%name% %{T-}
+label-focused-padding = 1
+label-unfocused-padding = 1
+label-visible-padding = 1
+label-urgent-padding = 1
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.highlight}
+label-mode-foreground = ${colors.warn}
+
+;=====================================================
+;   module/title
+;=====================================================
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-padding = 1
+
+label = %title%
+label-maxlen = 60
+label-empty =
+
+;=====================================================
+;   module/cpu
+;=====================================================
+[module/cpu]
+type = internal/cpu
+inherit = section/base
+interval = 1
+
+label = %{T1}龍%{T-} %percentage%%
+
+;=====================================================
+;   module/memory
+;=====================================================
+[module/memory]
+type = internal/memory
+inherit = section/base
+interval = 3
+
+label = %{T3=1}%{T-} %gb_used:2%
+
+;=====================================================
+;   module/wifi
+;=====================================================
+[module/wifi]
+type = internal/network
+inherit = section/base
+interface = ${variables.wlan}
+interval = 1
+accumulate-stats = false
+
+label-connected = "%{T1}直%{T-} %{T3}%{T-} %downspeed:% %{T3}%{T-} %upspeed:%"
+label-disconnected = "%{T1}%{F#1D1F21}直%{F- T-}"
+
+;=====================================================
+;   module/eth
+;=====================================================
+[module/eth]
+type = internal/network
+inherit = section/base
+interface = ${variables.eth}
+interval = 1
+accumulate-stats = false
+
+label-connected = "%{T1}﴿%{T-}  %{T3}%{T-} %downspeed:% %{T3}%{T-} %upspeed:%"
+label-disconnected = "%{T1}%{F#1D1F21}﴿%{F- T-}"
+
+;=====================================================
+;   module/date
+;=====================================================
+[module/date]
+type = internal/date
+inherit = section/base
+interval = 1
+date = %a %d %b
+
+label = %{T1}%{T-} %date%
+;format-suffix = %{T2}%{T-}
+;=====================================================
+;   module/time
+;=====================================================
+[module/time]
+type = internal/date
+interval = 1
+time = %I:%M
+
+format-prefix = %{T2}%{T-}
+format-prefix-foreground = 292929
+;format-prefix-background = FCBA7D
+format-prefix-background = ${colors.highback}
+format-foreground = ${colors.foreground}
+format-background = 292929
+
+label = " %time%    "
+
+;=====================================================
+;   module/volume
+;=====================================================
+[module/volume]
+type = internal/alsa
+inherit = section/base
+interval = 1
+
+label-volume = %{T1}墳%{T-} %percentage:%%
+label-muted = %{T1}婢%{T-}
+
+;=====================================================
+;   module/backlight
+;=====================================================
+[module/backlight]
+type = internal/xbacklight
+inherit = section/base
+
+;output = eDP1
+enable-scroll = false
+
+format = <label>
+label = %{T1}%{T-} %percentage:%%
+
+;=====================================================
+;   module/battery
+;=====================================================
+[module/battery]
+type = internal/battery
+inherit = section/base
+battery = BAT0
+adapter = ADP0
+full-at = 95
+
+format-charging = <label-charging>
+label-charging =%{T1}%{T-} %percentage:%%
+
+format-discharging = <label-discharging>
+label-discharging = %{T1}%{T-} %percentage:%%
+
+format-full = <label-full>
+label-full = %{T1}%{T-} %percentage:%%
+
+;=====================================================
+;   module/temperature
+;=====================================================
+[module/temperature]
+type = internal/temperature
+inherit = section/base
+thermal-zone = 0
+warn-temperature = 70
+
+label = %{T1}﨎%{T-} %temperature-c%
+label-warn = %{T1}%{T-} %temperature-c%
+
+;=====================================================
+;   module/updates
+;=====================================================
+[module/updates]
+type = custom/script
+inherit = section/base
+
+format-prefix = %{T2}%{T-}
+;format-prefix-foreground = #007DEE
+format-prefix-foreground = ${colors.warn}
+format-prefix-background = ${colors.background}
+format-foreground = ${colors.foreground}
+;format-background = #007DEE
+format-background = ${colors.warn}
+format-suffix = %{T2}%{T-}
+format-suffix-foreground = ${colors.highback}
+;format-suffix-background = #007DEE
+format-suffix-background = ${colors.warn}
+label-padding = ${variables.label-padding}
+
+exec = ~/.config/polybar/scripts/check-all-updates.sh
+interval = 600
+label = %{T26}%{T-} %{T1}%output%%{T-}
+
+;=====================================================
+;   module/bluetooth
+;=====================================================
+[module/bluetooth]
+type = custom/script
+inherit = section/base
+
+exec = ~/.config/polybar/bluetooth.sh
+interval = 10
+label = %{T1}%output%%{T-}
+
+
+
+
+;===============================================================
+;	MPD                                                    =
+;===============================================================
+
+[module/mpd]
+type = internal/mpd
+
+; Host where mpd is running (either ip or domain name)
+; Can also be the full path to a unix socket where mpd is running.
+host = 127.0.0.1
+port = 6600
+;password = mysecretpassword
+
+; Seconds to sleep between progressbar/song timer sync
+; Default: 1
+interval = 2
+
+
+
+; Available tags:
+;   <label-song> (default)
+;   <label-time>
+;   <bar-progress>
+;   <toggle> - gets replaced with <icon-(pause|play)>
+;   <toggle-stop> - gets replaced with <icon-(stop|play)>
+;   <icon-random>
+;   <icon-repeat>
+;   <icon-repeatone> (deprecated)
+;   <icon-single> - Toggle playing only a single song. Replaces <icon-repeatone>
+;   <icon-consume>
+;   <icon-prev>
+;   <icon-stop>
+;   <icon-play>
+;   <icon-pause>
+;   <icon-next>
+;   <icon-seekb>
+;   <icon-seekf>
+;format-online =  "<label-song>   <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
+;format-online =  "<label-song>  <bar-progress>"
+format-online =  %{F#00000000}%{F-} %{F#D943C8} %{F-} "<label-song>"<bar-progress><icon-prev><icon-stop><toggle><icon-next>
+icon-prev = %{F#62BBD3} %{F-}
+icon-stop = %{F#62BBD3}  %{F-}
+icon-play = %{F#aaD943C8}  %{F-}
+icon-pause = 
+icon-next = %{F#62BBD3}  %{F-}
+label-song-maxlen = 40
+label-song-ellipsis = true
+bar-progress-width = 8
+bar-progress-indicator = %{F#aaD943C8}%{F-}
+bar-progress-indicator-font = 1
+bar-progress-fill = ─
+bar-progress-empty = ─
+bar-progress-fill-font = 1
+bar-progress-empty-font = 6
+bar-progress-fill-foreground = #aaff77
+bar-progress-fill-background = ${colors.background}
+bar-progress-indicator-foreground = ${colors.foreground}
+format-online-foreground = ${colors.foreground}
+format-online-background = ${colors.background}
+
+
+;==============================================
+;	BROWSERMEDIACONTROL
+;=============================================
+[module/bmc]
+;https://github.com/jaagr/polybar/wiki/User-contributed-modules#compton
+type = custom/script
+exec = ~/.config/polybar/scripts/browsermediacontrol
+scroll-up = ~/.config/polybar/scripts/browsermediacontrol --volume 1
+scroll-down = ~/.config/polybar/scripts/browsermediacontrol --volume -1 
+interval = 0.1
+format-foreground = ${colors.highback}
+format-font = 2
+format-background = ${colors.highlight}
+format-prefix = %{T28} %{T-}
+format-prefix-background = ${colors.background}
+format-prefix-foreground = ${colors.highlight}
+;format-suffix = %{T28} %{T-}
+;format-suffix-foreground = ${colors.highlight}
+;format-suffix-background = ${colors.background}
+
+##############################################333
+#			release
+##########################################
+[module/release]
+type = custom/script
+exec = (lsb_release -d | awk {'print $2'} ;echo " "; lsb_release -r | awk {'print $2'}) | tr -d '\n'
+interval = 6000
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = %{T23}%{T-}
+format-prefix-foreground = #12FB3E
+format-underline = #62FF00
+
+
+
+
+#################################################
+#					kernel
+#################################################
+[module/kernel]
+type = custom/script
+exec = echo $(uname -r)
+interval = 10000
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = %{T23} %{T-}
+format-prefix-foreground = ${colors.foreground}
+format-underline = #62FF00

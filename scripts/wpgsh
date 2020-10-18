@@ -1,0 +1,4 @@
+#!/bin/sh
+wpg -m; sleep 1
+gengtk
+exit
